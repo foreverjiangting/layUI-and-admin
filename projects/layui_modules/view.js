@@ -4,6 +4,9 @@ layui.define(['laytpl'], function (exports) {
   var laytpl = layui.laytpl;
 
   function _view(params) {
+
+    console.log('params',params)
+
     var _this = this
       , before = null;
 
@@ -11,7 +14,7 @@ layui.define(['laytpl'], function (exports) {
     _this.template =  params.template;
 
 
-    
+
     // 模板引擎数据
     _this.data = params.data || {};
 
@@ -57,16 +60,25 @@ layui.define(['laytpl'], function (exports) {
     };
     var loadHtml  = function(Id, FileName){
       $('#' + Id).load(hosturl() + FileName);
+
+
+
+
     };
 
     data = _.extend(_this.data, data);
 
 
+    console.log('_this.data',data)
+
     laytpl(_this.template).render(data, function (html) {
-     // loadHtml('dx-template',html); //插入页面
-      var compiled = _.template(_this.template);
-      let insertHtml = compiled(data);
-      $('#dx-template').html(insertHtml);
+
+     //  console.log(html)
+
+     // // loadHtml('dx-template',html); //插入页面
+     //  // var compiled = _.template(_this.template);
+      // var insertHtml = compiled(data);
+      $('#dx-template').html(html);
       callback && callback();
       _this.event && _this.event(_this);
     });
