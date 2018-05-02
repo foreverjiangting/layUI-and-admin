@@ -6,7 +6,6 @@ layui.define(['laytpl'], function (exports) {
   function _view(params) {
     var _this = this
       , before = null;
-    var baseUrl = "../modules/"
 
     // HTML模版
     _this.template =  params.template;
@@ -64,7 +63,10 @@ layui.define(['laytpl'], function (exports) {
 
 
     laytpl(_this.template).render(data, function (html) {
-      loadHtml('dx-template',html); //插入页面
+     // loadHtml('dx-template',html); //插入页面
+      var compiled = _.template(_this.template);
+      let insertHtml = compiled(data);
+      $('#dx-template').html(insertHtml);
       callback && callback();
       _this.event && _this.event(_this);
     });
