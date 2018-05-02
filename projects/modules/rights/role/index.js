@@ -11,16 +11,16 @@ layui.use(['form', 'laypage', '_route', 'laydate', '_view', '_ajax'], function (
     , endTime;
 
   // 初始化当前位置
-  _route.setBreadcrumb(['后台用户管理', '后台用户登录测试']);
-
+  _route.setBreadcrumb(['权限管理', '角色组']);
+  
   // 视图渲染
   var _view = new layui._view({
-    template:'/modules/shop1/index.html',
-    event: addEvent
-  });
-  function addEvent() {
-   
+    template:"/modules/rights/role/index.html",
+    event:clickEvent
 
+  });
+  function clickEvent(){
+    
   }
 
 });

@@ -7,6 +7,8 @@ layui.use(['_route', '_view'], function () {
   _route.setBreadcrumb(['后台用户管理', {url: 'backstage.user', name: '权限维护'}]);
 
   // 视图渲染
-  var _view = new layui._view({template:'/modules/rights.management/index.html'});
+  var _view = new layui._view({
+    template:'/modules/rights/role//index.html'
+  });
 
 });

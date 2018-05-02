@@ -11,16 +11,16 @@ layui.use(['form', 'laypage', '_route', 'laydate', '_view', '_ajax'], function (
     , endTime;
 
   // 初始化当前位置
-  _route.setBreadcrumb(['后台用户管理', '后台角色']);
-  
+  _route.setBreadcrumb(['APP用户管理', '黑名单']);
+
   // 视图渲染
   var _view = new layui._view({
-    template:"/modules/backstage.role/index.html",
-    event:clickEvent
-
+    template:'/modules/appUser/blackName/index.html',
+    event: addEvent
   });
-  function clickEvent(){
-    
+  function addEvent() {
+   
+
   }
 
 });
